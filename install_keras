@@ -1,5 +1,8 @@
 ###commande linux pour installer keras  
 
+
+python version: 3.5.2
+
 pip3 install tensorflow
 pip3 install numpy scipy
 pip3 install scikit-learn
@@ -7,3 +10,4 @@ pip3 install h5py
 pip3 install keras
 pip3 install panda 
 pip3 install matplotlib
+
