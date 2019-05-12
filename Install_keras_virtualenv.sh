@@ -65,6 +65,7 @@ pip3 install pandas
 pip3 install matplotlib
 
 
+
 ## Check if the installation is working by importing keras
 ## If an error "connection reset by peer" appears,
 ## you can try to run this chunk of code again (with the proper environment active)
