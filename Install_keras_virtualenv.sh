@@ -55,6 +55,7 @@ python --version
 ## the same terminal.
 ## Virtual environments are only active in one terminal once they are activated
 ## ** If pip needs to be updated it will give the proper command to do so before installing
+sudo apt-get install python3-tk
 pip3 install tensorflow
 pip3 install numpy==1.16.1
 pip3 install scipy
