@@ -7,6 +7,8 @@ from keras.layers import Embedding
 from keras.layers import Conv1D, GlobalMaxPooling1D
 from keras.callbacks import ModelCheckpoint, EarlyStopping,  History
 import time
+import matplotlib
+matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 plt.style.use('ggplot')
 
@@ -132,4 +134,6 @@ def plot_history(history):
 ##Plot the history opf the imbd mùodel 
 plt.clf()
 plot_history(hist_model_imbd)
-plt.show()
+plt.savefig('training_and_validation.png', bbox_inches='tight')
+#plt.show()  ## You can try this one instead if you are in an interactive session
+
