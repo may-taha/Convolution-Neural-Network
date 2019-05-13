@@ -9,7 +9,7 @@
 ## Installation of packages in your system require administrative rights
 ################################################
 
-## sudo apt-get install python-dev virtualenv
+## sudo apt-get install python-dev python-tk virtualenv
 
 ## To install python 3.5 or 3.6 you should compile it and install it not to
 ## mess with the system version of python
