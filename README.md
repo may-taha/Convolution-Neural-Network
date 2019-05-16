@@ -18,6 +18,6 @@ in theory and in practice.
 
 1- A file for needed installation. 
 
-2- An example of convolution networks for text (1 dimensional) 
+2- An example of convolution networks for text (1 dimensional) + error plot 
 
-3- An example of convolution network for images (2 dimensional)
+3- An example of convolution network for images (2 dimensional) + error plot 
