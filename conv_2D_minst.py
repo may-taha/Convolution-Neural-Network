@@ -7,7 +7,11 @@ from keras.layers import Conv2D, MaxPooling2D
 from keras.callbacks import ModelCheckpoint, EarlyStopping,  History
 import time
 from keras import backend as K
+import matplotlib
+matplotlib.use('Agg')
 from matplotlib import pyplot as plt
+plt.style.use('ggplot')
+
 
 batch_size = 128
 num_classes = 10
@@ -57,8 +61,8 @@ model = Sequential()
 
 #First convolution layer, must specify input_shape as convolution is the first layer 
 model.add(Conv2D(32, kernel_size=(3, 3),
-                 activation='relu',
-                 input_shape=input_shape))
+                 activation='relu',    #))
+                 input_shape=input_shape))  ## This line will be deprecated in tensorflow py3.6.5+. You can simply remove it 
 
 ##Second convolution layer 
 model.add(Conv2D(64, (3, 3), activation='relu'))
@@ -98,6 +102,7 @@ print(model.summary())
 ###training 
 time_start = time.time()
 
+#hist_model_mnist = model.fit(x_train, y_train,
 hist_model_mnist = model.fit(x_train, y_train,
           batch_size=batch_size,
           epochs=epochs,
@@ -115,10 +120,34 @@ score = model.evaluate(x_test, y_test, verbose=0)
 
 
 
+####A function that can be used to plot traioning and validation error 
+def plot_history(history):
+    acc = history.history['acc']
+    val_acc = history.history['val_acc']
+    loss = history.history['loss']
+    val_loss = history.history['val_loss']
+    x = range(1, len(acc) + 1)
+    plt.figure(figsize=(12, 5))
+    plt.subplot(1, 2, 1)
+    plt.plot(x, acc, 'b', label='Training acc')
+    plt.plot(x, val_acc, 'r', label='Validation acc')
+    plt.title('Training and validation accuracy')
+    plt.legend()
+    plt.subplot(1, 2, 2)
+    plt.plot(x, loss, 'b', label='Training loss')
+    plt.plot(x, val_loss, 'r', label='Validation loss')
+    plt.title('Training and validation loss')
+    plt.legend()
+
+
+
+
 ###Training validation plot using the defined function
 plt.clf()
 plot_history(hist_model_mnist)
-plt.show()
+plt.savefig('2D_training_and_validation.png', bbox_inches='tight')
+plt.show()   ## You can try this one instead if you are in an interactive session
+
 
 
 

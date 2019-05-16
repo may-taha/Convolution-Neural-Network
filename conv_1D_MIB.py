@@ -134,5 +134,5 @@ def plot_history(history):
 ##Plot the history opf the imbd mùodel 
 plt.clf()
 plot_history(hist_model_imbd)
-plt.savefig('training_and_validation.png', bbox_inches='tight')
+plt.savefig('1D_training_and_validation.png', bbox_inches='tight')
 #plt.show()  ## You can try this one instead if you are in an interactive session
