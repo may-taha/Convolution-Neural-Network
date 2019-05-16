@@ -111,7 +111,7 @@ time_end = time.time()
 D = time_end  - time_start
 
 
-####A function that can be used to plot traioning and validation error 
+########A function that can be used to plot training and validation error 
 def plot_history(history):
     acc = history.history['acc']
     val_acc = history.history['val_acc']
@@ -131,8 +131,8 @@ def plot_history(history):
     plt.legend()
 
 
-##Plot the history opf the imbd mùodel 
+##Plot the history of the imbd model 
 plt.clf()
 plot_history(hist_model_imbd)
-plt.savefig('training_and_validation.png', bbox_inches='tight')
+plt.savefig('training_and_validation_conv_1D_minst', bbox_inches='tight')
 #plt.show()  ## You can try this one instead if you are in an interactive session
