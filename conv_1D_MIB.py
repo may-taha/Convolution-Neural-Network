@@ -36,7 +36,7 @@ print(len(x_test), 'test sequences')
 print('Pad sequences (samples x time)')
 
 
-##Pad 
+##Pad: add O in order to have sentences with the same length
 x_train = sequence.pad_sequences(x_train, maxlen=maxlen)
 x_test = sequence.pad_sequences(x_test, maxlen=maxlen)
 print('x_train shape:', x_train.shape)
